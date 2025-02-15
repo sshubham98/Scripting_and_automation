@@ -1,44 +1,51 @@
-# Scripting_and_automation
-This project automates the Vivado synthesis and implementation process using TCL scripts and Python. The main components of the project are:
+# FPGA Design Automation Framework
 
-## Tcl_scripting.ipynb
+## Project Overview
+This project automates the Vivado synthesis and implementation process using TCL scripts and Python. It streamlines FPGA design workflows by automating project creation, synthesis, and result reporting.
 
-This Jupyter notebook automates the entire flow and generates results in a file named `results1.csv`. It likely uses Python to orchestrate the execution of TCL scripts and process the results.
+## Key Components
 
-## TCL Scripts
+### 1. Tcl_scripting.ipynb
+A Jupyter notebook that orchestrates the entire automation flow:
+- Executes TCL scripts
+- Processes synthesis results
+- Generates the final `results1.csv` file
 
-### tcl_add1.tcl
+### 2. TCL Scripts
+#### tcl_add1.tcl
+- Creates a Vivado project named "project3"
+- Adds all designs from the "Modules" folder to the project
 
-This script creates a project named "project3" and adds all the designs present in the "Modules" folder to the project. It streamlines the process of setting up a new Vivado project with multiple design files.
+#### tcl_run3.tcl
+- Handles synthesis of the designs
+- Stores synthesis results
 
-### tcl_run3.tcl
+### 3. Design Files
+The repository includes various Verilog design files for testing the automation tool:
 
-This script handles the synthesis of the code and stores the results. It automates the synthesis process, which is a crucial step in FPGA design.
+1. `multiply_not_synth.v`: A large, non-synthesizable multiplier (for testing error handling)
+2. `top_master_slave.v`: Master-slave flip-flop implementation
+3. `top_mux21.v`: 2:1 multiplexer design
+4. `top_alubit.v`: ALU (Arithmetic Logic Unit) design
+5. `top_mealy.v`: Mealy state machine implementation
+6. `top_ripplebit.v`: Ripple-carry adder design
+7. `top_binary_decoder.v`: Binary decoder implementation
+8. `top_moore.v`: Moore state machine implementation
+9. `top_synchronous_counter.v`: Synchronous counter design
+10. `top_dff.v`: D flip-flop implementation
+11. `top_multiply.v`: 8-bit multiplier design
+12. `top_universal_shift_reg.v`: Universal shift register implementation
 
-## Design Files
+### 4. Results
+The `Results1.csv` file contains synthesis results for each design, including:
+- Resource utilization (LUTs, FFs, DSPs, etc.)
+- Power consumption
+- Timing information
+- Synthesizability flag (designs with all zeros are not synthesizable)
 
-The repository contains several Verilog design files that are used to test the automation tool. These designs include:
-
-1. **dff**: A D flip-flop implementation
-2. **multiply**: An 8-bit multiplier
-3. **multiply_not_synth**: A large multiplier that is not synthesizable
-4. **mux21**: A 2:1 multiplexer
-5. **top_alubit.v**: Likely an ALU (Arithmetic Logic Unit) design
-6. **top_koggestone_bit.v**: Possibly a Kogge-Stone adder implementation
-7. **top_master_slave.v**: A master-slave flip-flop design
-8. **top_moore.v**: A Moore state machine implementation
-9. **top_knowels_bit.v**: Another bit-level design, possibly an adder variant
-10. **top_lander_fisher_bit.v**: Likely a Lander-Fischer adder implementation
-11. **top_mealy.v**: A Mealy state machine implementation
-12. **top_ripplebit.v**: Probably a ripple-carry adder design
-
-## Results
-
-The `Results1.csv` file contains the synthesis results for each design. It provides information about the synthesizability and resource utilization of each design. If a row in the CSV file contains all zeros, it indicates that the corresponding design is not synthesizable.
-
-This automation tool significantly streamlines the FPGA design process by:
-
-1. Automatically creating projects and adding design files
-2. Running synthesis and implementation steps
-3. Generating reports and results in an easily analyzable format (CSV)
-
+## Benefits of Automation
+1. Batch processing of multiple designs
+2. Consistent project setup and synthesis flow
+3. Automated report generation in CSV format for easy analysis
+4. Quick identification of non-synthesizable designs
+5. Significant time savings in the FPGA design process
