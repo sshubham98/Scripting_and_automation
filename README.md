@@ -9,7 +9,7 @@ This project automates the Vivado synthesis and implementation process using TCL
 A Jupyter notebook that orchestrates the entire automation flow:
 - Executes TCL scripts
 - Processes synthesis results
-- Generates the final `results1.csv` file
+- Generates the final `1.results.csv` file
 
 ### 2. TCL Scripts
 #### tcl_add1.tcl
