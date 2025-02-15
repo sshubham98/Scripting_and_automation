@@ -37,7 +37,7 @@ The repository includes various Verilog design files for testing the automation 
 12. `top_universal_shift_reg.v`: Universal shift register implementation
 
 ### 4. Results
-The `Results1.csv` file contains synthesis results for each design, including:
+The `1.Results.csv` file contains synthesis results for each design, including:
 - Resource utilization (LUTs, FFs, DSPs, etc.)
 - Power consumption
 - Timing information
